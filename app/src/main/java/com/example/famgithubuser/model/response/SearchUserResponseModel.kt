@@ -2,7 +2,17 @@ package com.example.famgithubuser.model.response
 
 import com.google.gson.annotations.SerializedName
 
-data class SeachUserResponseModel (
+data class SearchUserResponseModel (
+    @field:SerializedName("total_count")
+    val totalCount: Long? = null,
+
+    @field:SerializedName("incomplete_results")
+    val incompleteResults: Boolean? = null,
+
+    @field:SerializedName("items")
+    val items: ArrayList<UserModel>? = null
+)
+data class UserModel (
     @field:SerializedName("login")
     val login: String? = null,
 

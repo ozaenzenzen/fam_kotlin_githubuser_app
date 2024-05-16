@@ -3,6 +3,10 @@ package com.example.famgithubuser.config
 //import com.artworkspace.github.data.remote.response.ResponseSearch
 //import com.artworkspace.github.data.remote.response.SimpleUser
 //import com.artworkspace.github.data.remote.response.User
+import com.example.famgithubuser.model.response.DetailUserResponseModel
+import com.example.famgithubuser.model.response.ListFollowersUserResponseModel
+import com.example.famgithubuser.model.response.ListFollowingUserResponseModel
+import com.example.famgithubuser.model.response.SearchUserResponseModel
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -20,7 +24,7 @@ interface ApiService {
     suspend fun searchUsername(
         @Header("Authorization") token: String,
         @Query("q") q: String
-    ): ResponseSearch
+    ): SearchUserResponseModel
 
 
     /**
@@ -34,7 +38,7 @@ interface ApiService {
     suspend fun getUserDetail(
         @Header("Authorization") token: String,
         @Path("username") username: String
-    ): User
+    ): DetailUserResponseModel
 
 
     /**
@@ -48,7 +52,7 @@ interface ApiService {
     suspend fun getUserFollowers(
         @Header("Authorization") token: String,
         @Path("username") username: String
-    ): ArrayList<SimpleUser>
+    ): ArrayList<ListFollowersUserResponseModel>
 
 
     /**
@@ -62,5 +66,5 @@ interface ApiService {
     suspend fun getUserFollowing(
         @Header("Authorization") token: String,
         @Path("username") username: String
-    ): ArrayList<SimpleUser>
+    ): ArrayList<ListFollowingUserResponseModel>
 }

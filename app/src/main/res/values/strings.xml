@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">"Github User's Search"</string>
-    <string name="app_name">GitHub</string>
     <string name="user_name">User Name</string>
     <string name="name">Name</string>
     <string name="company">Company</string>

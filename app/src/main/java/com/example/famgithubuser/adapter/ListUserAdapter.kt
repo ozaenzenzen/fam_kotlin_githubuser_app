@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.famgithubuser.databinding.UserItemCardBinding
+import com.example.famgithubuser.utils.UIHelper.Companion.setImageGlide
 
 class ListUserAdapter(private val listUser: ArrayList<UserModel>) :
     RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
@@ -36,7 +37,7 @@ class ListUserAdapter(private val listUser: ArrayList<UserModel>) :
 
         holder.binding.apply {
             cardTvUsername.text = user.login
-            cardImageProfile.setImageGlide(holder.itemView.context, user.avatarUrl)
+            cardImageProfile.setImageGlide(context = holder.itemView.context, url = user.avatarURL.toString())
         }
 
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(user) }

@@ -10,7 +10,7 @@ data class SearchUserResponseModel (
     val incompleteResults: Boolean? = null,
 
     @field:SerializedName("items")
-    val items: ArrayList<UserModel>? = null
+    val items: ArrayList<UserModel>
 )
 data class UserModel (
     @field:SerializedName("login")
